@@ -1,5 +1,7 @@
 
 package aplicaciongraficas;
+import java.awt.*;
+import java.awt.Toolkit;
 import javax.swing.*;
 
 public class Aplicaciongraficas {
@@ -16,7 +18,15 @@ public class Aplicaciongraficas {
 class miMarco extends JFrame{
    public miMarco(){
         //setSize(500, 300);
-        setBounds(500, 300, 500, 200);
-        setResizable(false);
+       Toolkit mipantalla = Toolkit.getDefaultToolkit();
+       
+       Dimension tamanoPantalla = mipantalla.getScreenSize();
+        
+       int alturaPantalla = tamanoPantalla.height;
+       int anchoPantalla = tamanoPantalla.width;
+       
+       setSize(anchoPantalla/2, alturaPantalla/2);
+       
+       setLocation(anchoPantalla/4, alturaPantalla/4);
     }
 }
